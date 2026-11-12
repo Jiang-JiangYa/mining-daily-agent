@@ -1,0 +1,10 @@
+services:
+  agent:
+    build: .
+    environment:
+      DATA_MODE: ${DATA_MODE:-demo}
+      NEWS_RSS_URLS: ${NEWS_RSS_URLS:-https://www.mining.com/feed/}
+      PRICE_CSV: /app/data/prices.csv
+    volumes:
+      - ./output:/app/output
+      - ./data:/app/data:ro

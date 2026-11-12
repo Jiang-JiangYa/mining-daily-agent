@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+output/
+data/prices.csv
+/deliverables/
+/build_interview_doc.py
+/mcp-config.json
+.env.*
