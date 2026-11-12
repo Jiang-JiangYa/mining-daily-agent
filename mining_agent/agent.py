@@ -62,7 +62,7 @@ async def generate(args):
         price = await call('prices', 'get_price', commodity=args.commodity, date=today().isoformat())
         trend = await call('prices', 'get_trend', commodity=args.commodity, days=args.days)
 
-    lines = [f'# 矿权日报 · {today().isoformat()}', '', f'需求：{safe(args.prompt)}', '', f'数据模式：**{args.mode.upper()}**。覆盖最近 {args.days} 个自然日；仅覆盖已配置来源。', '']
+    lines = [f'# 矿业日报 · {today().isoformat()}', '', f'需求：{safe(args.prompt)}', '', f'数据模式：**{args.mode.upper()}**。覆盖最近 {args.days} 个自然日；仅覆盖已配置来源。', '']
     if args.mode == 'demo':
         lines += ['> 演示数据：新闻、报告资源量和报价均为合成验收样例，不能用于判断 Pilbara 真实情况。', '']
     lines += ['## 新闻摘要', '']
@@ -94,7 +94,7 @@ async def generate(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='通过三个 MCP Server 生成矿权日报')
+    parser = argparse.ArgumentParser(description='通过三个 MCP Server 生成矿业日报')
     parser.add_argument('prompt', nargs='?', default='给我生成一份关于 Pilbara 锂矿的今日简报')
     parser.add_argument('--mode', choices=['demo', 'live'], default=os.getenv('DATA_MODE', 'demo'))
     parser.add_argument('--query', help='RSS 搜索关键词，默认从 Pilbara 请求中提取 Pilbara')

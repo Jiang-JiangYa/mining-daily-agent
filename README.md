@@ -1,4 +1,4 @@
-# 矿权日报 Agent
+# 矿业日报Agent
 
 按面试题第二题搭建：3 个 MCP Server、5 个工具、1 个 MCP 客户端，输出 Markdown 简报与 JSON 调用证据。
 
